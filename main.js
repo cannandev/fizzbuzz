@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	for (var num = 1; num < 101; num++) {
+	for (var num = 1; num <= 100; num++) {
 		if ((num % 3) === 0 && (num % 5) === 0) {
 			$('body').append('<p>FizzBuzz</p>');
 		}
