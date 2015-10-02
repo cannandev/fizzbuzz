@@ -1,17 +1,20 @@
 function getNumber() {
+	var list = $('#list'); // is this variable still in scope?
+	list.empty();
 
 	function checkFizzBuzz(n) {
+
 		if ((n % 3) === 0 && (n % 5) === 0) {
-			$('body').append('<p>FizzBuzz</p>');
+			$(list).append('<p>FizzBuzz</p>');
 		}
 		else if (n % 3 === 0) {
-			$('body').append('<p>Fizz</p>');
+			$(list).append('<p>Fizz</p>');
 		}
 		else if (n % 5 === 0) {
-			$('body').append('<p>Buzz</p>');
+			$(list).append('<p>Buzz</p>');
 		}
 		else {
-			$('body').append('<p>' + n + '</p>');
+			$(list).append('<p>' + n + '</p>');
 		}
 		//should I return something here?
 	}
@@ -32,8 +35,6 @@ function getNumber() {
 	}
 }
 
-
-
 $(document).ready(function(){
-	$('button').click(getNumber); // add callback to clear input
+	$('button').click(getNumber);
 });
