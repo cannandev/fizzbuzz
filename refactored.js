@@ -1,8 +1,4 @@
 function getNumber() {
-	var num = $('#number').val();			
-	if(parseInt(num)) {
-		num = parseInt(num);
-	}
 
 	function checkFizzBuzz(n) {
 		if ((n % 3) === 0 && (n % 5) === 0) {
@@ -20,10 +16,20 @@ function getNumber() {
 		//should I return something here?
 	}
 
+	var num = $('#number').val();
+
+	if(!parseInt(num) || num % 1 !== 0) { // why does parseInt('597a') return falsy?
+		console.log(num + ' is falsy');
+		num = 0;
+	}
+	else {
+		console.log(num + ' is truthy');	
+		num = parseInt(num);
+	}
+
 	for(var i = 1; i <= num; i++) {
 		checkFizzBuzz(i);
 	}
-
 }
 
 
